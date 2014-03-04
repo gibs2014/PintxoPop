@@ -1,0 +1,71 @@
+
+<style>
+.h2{
+  text-align: left;
+
+}
+
+</style>
+
+
+
+<div class="page-header">
+  <img src="https://scontent-b-ord.xx.fbcdn.net/hphotos-prn1/v/t34/1620897_10100821650258460_547059290_n.jpg?oh=f5237ddec2c514afa32b4c0749bc2151&oe=5315A5C1" width="200">
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-3">
+    <%= image_tag @recipe.category, width:250 %>
+  </div>
+
+  <div class = "col-xs-12 col-md-6">
+      <h2><%=@recipe.name%></h2>
+      <p> __</p>
+      <p><%=@recipe.description%></p>
+      <p><%= @recipe.prep_time %></p>
+      <p>__</p>
+      <p><%= @recipe.preparation %></p>
+   </div>
+
+  <div class="col-xs-6 col-md-3">
+    <p><%= image_tag @recipe.creator_image, width:200 %></p>
+    <p><%= @recipe.creator %></p>
+  </div>
+</div>
+<!--
+<dl class="dl-horizontal">
+  <dt>Name</dt>
+  <h2><%= @recipe.name %></h2>
+
+  <dt>Category</dt>
+  <dd><%= @recipe.category %></dd>
+
+  <dt>Quantity</dt>
+  <dd><%= @recipe.quantity %></dd>
+
+  <dt>Calories</dt>
+  <dd><%= @recipe.calories %></dd>
+
+  <dt>Preparation</dt>
+  <dd><%= @recipe.preparation %></dd>
+
+  <dt>Prep time</dt>
+  <dd><%= @recipe.prep_time %></dd>
+
+  <dt>Image</dt>
+  <dd></dd>
+
+  <dt>Description</dt>
+  <dd><%= @recipe.description %></dd>
+
+  <dt>Ingredients</dt>
+  <dd><%= @recipe.ingredients %></dd>
+
+  <dt>Creator</dt>
+  <dd><%= @recipe.creator %></dd>
+
+  <dt>Creator image</dt>
+  <dd><%= @recipe.creator_image %></dd>
+
+</dl> -->
+</div>

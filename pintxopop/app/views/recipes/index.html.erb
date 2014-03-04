@@ -1,0 +1,112 @@
+
+<style>
+
+
+.thumbnail
+  {border-color:black;
+    border-radius: 0px;
+    border-width: 2px;
+    padding-top: 0px;
+    text-align: center;
+    height: 350px;
+}
+
+.page-header{
+  text-align: center;
+}
+
+
+
+.btn-view{
+  background-color:lightskyblue;
+  color: white;
+  border-radius: 0px;
+}
+
+.btn-edit{
+  background-color:white;
+  color: lightskyblue;
+  border-color: lightgrey;
+  border-radius: 0px;
+}
+
+.btn-delete{
+  background-color:lightgrey;
+  color: black;
+  border-color: lightgrey;
+  border-radius: 0px;
+}
+
+</style>
+
+<div class="container">
+
+<div class="page-header">
+  <img src="https://scontent-b-ord.xx.fbcdn.net/hphotos-prn1/v/t34/1620897_10100821650258460_547059290_n.jpg?oh=f5237ddec2c514afa32b4c0749bc2151&oe=5315A5C1" width="200">
+</div>
+
+<!--
+<p><%= link_to 'Add a New Recipe', new_recipe_url, class: 'btn btn-edit' %></p> -->
+
+<div class="row">
+    <% @recipes.each do |recipe| %>
+  <ul class="col-sm-12 col-md-4">
+      <article class="thumbnail">
+        <div class="caption">
+          <h3><%= recipe.name %></h3>
+        </div>
+        <%= image_tag recipe.image, width:1000 %>
+        <div class="caption">
+          <p><%= recipe.description%></p>
+          <p><%= link_to 'View', recipe_url(recipe), class: 'btn btn-view' %>
+             <%= link_to 'Edit', edit_recipe_url(recipe), class: 'btn btn-edit' %>
+              <%= link_to 'Delete', recipe_url(recipe), method: 'delete', data: { confirm: "Do you really want to delete this recipe?" }, class: 'btn btn-delete' %></p>
+      </div>
+    </article>
+  </ul>
+    <% end %>
+</div>
+
+<!-- <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Quantity</th>
+      <th>Calories</th>
+      <th>Preparation</th>
+      <th>Prep time</th>
+      <th>Image</th>
+      <th>Description</th>
+      <th>Ingredients</th>
+      <th>Creator</th>
+      <th>Creator image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.name %></td>
+        <td><%= recipe.category %></td>
+        <td><%= recipe.quantity %></td>
+        <td><%= recipe.calories %></td>
+        <td><%= recipe.preparation %></td>
+        <td><%= recipe.prep_time %></td>
+        <td><%= image_tag recipe.image, width:100 %></td>
+        <td><%= recipe.description %></td>
+        <td><%= recipe.ingredients %></td>
+        <td><%= recipe.creator %></td>
+        <td><%= recipe.creator_image %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, recipe_url(recipe), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_recipe_url(recipe), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, recipe_url(recipe), method: 'delete', data: { confirm: "Do you really want to delete this recipe?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ -->
+</div>
